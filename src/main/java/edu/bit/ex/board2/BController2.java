@@ -1,4 +1,4 @@
-package edu.bit.ex.board1;
+package edu.bit.ex.board2;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -15,21 +15,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-//첫번째 방법
-//1. interface IBDao를 XML namespace에 맵핑<mapper namespace = "edu.bit.ex.board1.IBDao">
-//2. sqlSession.getMapper(IBDao.class)를 이용
+
 
 @Controller
-public class BController {
+public class BController2 {
 	
 	@Inject
-	Bservice bservice;
+	Bservice2 bservice2;
 	
-	@RequestMapping("/list")
+	@RequestMapping("/list2")
 	public String list(Model model) throws Exception {
-		System.out.println("list()");
+		System.out.println("list2()");
 		
-		model.addAttribute("list", bservice.selectBoardList());		
+		model.addAttribute("list", bservice2.selectBoardList());		
 		
 		return"list";
 					
