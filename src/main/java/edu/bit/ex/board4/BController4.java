@@ -1,4 +1,4 @@
-package edu.bit.ex.board2;
+package edu.bit.ex.board4;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -15,19 +15,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-
+/*
+1.root~xml에 아래의 한줄을 추가
+    <!-- Mapper Interface-->
+    <mybatis-spring: scan base-package="edu.bit.mapper"/>
+2. 쿼리를 쓸 xml 생성    
+*/
 
 @Controller
-public class BController2 {
+public class BController4 {
 	
 	@Inject
-	Bservice2 bservice2;
+	Bservice4 bservice4;
 	
-	@RequestMapping("/list2")
-	public String list2(Model model) throws Exception {
-		System.out.println("list2()");
+	@RequestMapping("/list4")
+	public String list4(Model model) throws Exception {
+		System.out.println("list4()");
 		
-		model.addAttribute("list", bservice2.selectBoardList());		
+		model.addAttribute("list", bservice4.selectBoardList());		
 		
 		return"list";
 					
